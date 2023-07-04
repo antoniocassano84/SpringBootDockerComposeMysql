@@ -1,2 +1,22 @@
-package com.spring.boot.docker.compose.mysql.entity;public class Product {
+package com.spring.boot.docker.compose.mysql.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Table(name = "product")
+@Entity
+public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String name;
+    private double price;
+    private Integer qty;
+
 }
