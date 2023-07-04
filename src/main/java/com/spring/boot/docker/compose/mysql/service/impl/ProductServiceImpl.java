@@ -3,9 +3,11 @@ package com.spring.boot.docker.compose.mysql.service.impl;
 import com.spring.boot.docker.compose.mysql.entity.Product;
 import com.spring.boot.docker.compose.mysql.repository.ProductRepository;
 import com.spring.boot.docker.compose.mysql.service.ProductService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
