@@ -1,10 +1,17 @@
+version: '3.1'
 services:
   mysql:
     image: 'mysql:latest'
     environment:
-      - 'MYSQL_DATABASE=mydatabase'
-      - 'MYSQL_PASSWORD=secret'
-      - 'MYSQL_ROOT_PASSWORD=verysecret'
-      - 'MYSQL_USER=myuser'
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: productdb
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/MYSQL_DATABASE
+      SPRING_DATABASE_USERNAME: root
+      SPRING_DATABASE_PASSWORD: root
     ports:
-      - '3306'
+      - 3306:3306
+    volumes:
+      - data:/var/lib/mysql
+volumes:
+  data:
